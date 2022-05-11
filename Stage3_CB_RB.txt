@@ -1,0 +1,36 @@
+SD 01/01/2021
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Non-Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Non-Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Non-Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+AS student_name=Z,house=Slytherin
+AS student_name=X,house=Gryffindor
+AS student_name=Y,house=Gryffindor
+AS student_name=U,house=Ravenclaw
+AS student_name=V,house=Hufflepuff
+AS student_name=W,house=Hufflepuff
+
+CB title=A,student_name=Z,pass_code=Accio,number_of_days=4
+CB title=B,student_name=Z,number_of_days=3
+CB title=C,student_name=Z,number_of_days=2
+CB title=E,student_name=Z
+
+CR
+LA
+
+PL ** Return E
+RB title=E
+LA
+
+PL ** Return A
+RB title=A
+
+PL ** Return B
+RB title=B
+
+PL ** Return C
+RB title=C
+LA

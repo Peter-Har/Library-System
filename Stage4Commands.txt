@@ -1,0 +1,86 @@
+** This is a sample command file for the Hogwarts Library, Stage IV
+
+** Set Current Date
+SD 12/02/2020
+
+** Add Books to Library inventory
+NB title=Hogwarts a History,author=Bathilda Bagshot,year_published=1947,subject=Historical,section=Non-Restricted
+Nb title=Winogrand's Wondrous Water Plants,author=Selina Sapworthy,year_published=1970,subject=Water plants,section=Non-Restricted
+NB title=Ancient Runes Made Easy,author=Laurenzoo,year_published=1992,subject=Ancient Runes,section=Non-Restricted
+NB title=Magick Moste Evile,author=Godelot,year_published=1300,subject=Dark Arts,section=Restricted
+NB title=Secrets of the Darkest Art,author=Owle Bullock,year_published=1943,subject=Dark Arts,section=Restricted
+NB title=Fifteenth-Century Fiends,author=Unknown,year_published=1991,subject=Fiends,section=Non-Restricted
+
+** Add Students to Library Members
+AS student_name=Draco Malfoy,house=Slytherin
+AS student_name=Hermione Granger,house=Gryffindor
+AS student_name=Harry Potter,house=Gryffindor
+
+** Checkout Books
+CB  title=Fifteenth-Century Fiends,student_name=Harry Potter,number_of_days=2
+CB title=Winogrand's Wondrous Water Plants,student_name=Hermione Granger,number_of_days=4
+CB title=Ancient Runes Made Easy,student_name=Draco Malfoy
+cb title=Magick Moste Evile,student_name=Draco Malfoy,pass_code=Protego,number_of_days=1
+
+PL **** Additional Tests: Check Out
+PL **** Try checking out a book that has already been checked out
+CB title=Fifteenth-Century Fiends,student_name=Harry Potter,number_of_days=2 
+
+PL **** Book Not Found 
+CB title=Basic Hexes for the Busy and Vexed,student_name=Hermione Granger,number_of_days=2
+
+NB title=Basic Hexes for the Busy and Vexed,author=Unknown,year_published=1994,subject=Hexes,section=Non-Restricted
+
+PL **** Student Not Found 
+CB title=Ancient Runes Made Easy,student_name=Luna Lovegood,number_of_days=2
+AS student_name=Luna Lovegood,house=Ravenclaw
+
+
+PL ****** Checkout a Restricted Title: No Pass Code
+CB title=Secrets of the Darkest Art,student_name=Hermione Granger
+
+
+PL ****** Checkout a Restricted Title: Invalid Pass Code
+CB title=Secrets of the Darkest Art,student_name=Hermione Granger,pass_code=NoAccess
+PL
+
+CB title=Secrets of the Darkest Art,student_name=Hermione Granger,pass_code=Accio
+
+** Requesting Book Holds
+RH title=Ancient Runes Made Easy,student_name=Luna Lovegood,number_of_days=1
+RH title=Ancient Runes Made Easy,student_name=Hermione Granger,number_of_days=1
+RH title=Winogrand's Wondrous Water Plants,student_name=Luna Lovegood,number_of_days=1
+RH title=Winogrand's Wondrous Water Plants,student_name=Draco Malfoy,number_of_days=1
+
+PL **** Additional Tests: Hold Requests 
+
+PL ** Test Requesting a Book Hold a student currently has checked out
+RH title=Ancient Runes Made Easy,student_name=Draco Malfoy
+PL
+
+PL ** Test Requesting a Book Hold for a book a student who already has a hold
+RH title=Ancient Runes Made Easy,student_name=Luna Lovegood,number_of_days=3
+PL
+
+PL **** Test Deleting a Book that doesn't exist
+DB title=A Wizard's Guide to the Dark Web
+PL
+
+RB title=Basic Hexes for the Busy and Vexed 
+
+PL ** Advancing Date to >6 days Overdue Report
+AD 
+AD 
+AD 
+AD 
+AD
+AD 
+AD 
+PL
+
+PL ** Overdue Report 
+OR
+PL
+
+PL Thank you for using the Hogwarts Library Management System!
+** That's the end of the sample data for Stage IV.

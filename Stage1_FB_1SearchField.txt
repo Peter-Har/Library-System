@@ -1,0 +1,21 @@
+** This is a private command file for the Hogwarts Library, Stage IA
+  pl test lower case & spaced command line
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+PL ** 5 books
+LI
+PL ** Test Find Book with a single search parameter
+PL ** 4 books found: A, B, C, D
+FB section=Restricted
+PL 
+PL ** find 1 book: A
+FB title=A
+PL ** find 2 books: D, E
+FB author=F
+PL ** find 3 books: A, C, E
+FB year_published=2020

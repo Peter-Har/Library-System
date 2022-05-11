@@ -1,0 +1,55 @@
+  pl test lower case & spaced command line
+
+LI
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+LI
+LM
+
+DB title=A
+DB title=B
+DB title=E
+
+LI
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+PL ** 5 books
+LI
+
+PL ** find all books
+FB
+
+PL ** Test Find Book with a single search parameter
+PL ** 4 books found: A, B, C, D
+FB section=Restricted
+PL 
+PL ** find 1 book: A
+FB title=A
+PL ** find 2 books: D, E
+FB author=F
+PL ** find 3 books: A, C, E
+FB year_published=2020
+
+PL ** find 2 books: A, C
+FB author=B,year_published=2020
+
+PL ** find 2 books: C, E
+FB subject=G,year_published=2020
+
+AS student_name=Z,house=Slytherin
+AS student_name=X,house=Gryffindor
+AS student_name=Y,house=Gryffindor
+AS student_name=U,house=Ravenclaw
+AS student_name=V,house=Hufflepuff
+AS student_name=W,house=Hufflepuff
+
+LI
+LM

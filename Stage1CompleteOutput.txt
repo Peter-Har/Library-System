@@ -1,0 +1,259 @@
+test lower case & spaced command line
+*********************LIBRARY INVENTORY**********************
+Number of books available:  0
+------------------------------------
+*********************LIBRARY INVENTORY**********************
+Number of books available:  3
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: B
+Author: B
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+**********************LIBRARY MEMBERS***********************
+Gryffindor:
+         No Registered Members
+Hufflepuff:
+         No Registered Members
+ Ravenclaw:
+         No Registered Members
+ Slytherin:
+         No Registered Members
+*********************LIBRARY INVENTORY**********************
+Number of books available:  0
+------------------------------------
+** 5 books
+*********************LIBRARY INVENTORY**********************
+Number of books available:  5
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: B
+Author: B
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: D
+Author: F
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+** find all books
+************************BOOK SEARCH*************************
+Number of books found:  5
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: B
+Author: B
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: D
+Author: F
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+** Test Find Book with a single search parameter
+** 4 books found: A, B, C, D
+************************BOOK SEARCH*************************
+Number of books found:  4
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: B
+Author: B
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: D
+Author: F
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+
+** find 1 book: A
+************************BOOK SEARCH*************************
+Number of books found:  1
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+** find 2 books: D, E
+************************BOOK SEARCH*************************
+Number of books found:  2
+------------------------------------
+Title: D
+Author: F
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+** find 3 books: A, C, E
+************************BOOK SEARCH*************************
+Number of books found:  3
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+** find 2 books: A, C
+************************BOOK SEARCH*************************
+Number of books found:  2
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+** find 2 books: C, E
+************************BOOK SEARCH*************************
+Number of books found:  2
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+*********************LIBRARY INVENTORY**********************
+Number of books available:  5
+------------------------------------
+Title: A
+Author: B
+Date: 2020
+Subject: C
+Section: Restricted
+------------------------------------
+Title: B
+Author: B
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: C
+Author: B
+Date: 2020
+Subject: G
+Section: Restricted
+------------------------------------
+Title: D
+Author: F
+Date: 2019
+Subject: C
+Section: Restricted
+------------------------------------
+Title: E
+Author: F
+Date: 2020
+Subject: G
+Section: Non-Restricted
+------------------------------------
+**********************LIBRARY MEMBERS***********************
+Gryffindor:
+                             X
+                             Y
+Hufflepuff:
+                             V
+                             W
+ Ravenclaw:
+                             U
+ Slytherin:
+                             Z

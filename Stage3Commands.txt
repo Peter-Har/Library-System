@@ -1,0 +1,78 @@
+** This is a sample command file for the Hogwarts Library, Stage III
+
+** Add Books to Library inventory
+NB title=Hogwarts a History,author=Bathilda Bagshot,year_published=1947,subject=Historical,section=Non-Restricted
+Nb title=Winogrand's Wondrous Water Plants,author=Selina Sapworthy,year_published=1970,subject=Water plants,section=Non-Restricted
+NB title=Ancient Runes Made Easy,author=Laurenzoo,year_published=1992,subject=Ancient Runes,section=Non-Restricted
+NB title=Magick Moste Evile,author=Godelot,year_published=1300,subject=Dark Arts,section=Restricted
+NB title=Secrets of the Darkest Art,author=Owle Bullock,year_published=1943,subject=Dark Arts,section=Restricted
+NB title=Fifteenth-Century Fiends,author=Unknown,year_published=1991,subject=Fiends,section=Non-Restricted
+NB title=Basic Hexes for the Busy and Vexed,author=Unknown,year_published=1994,subject=Hexes,section=Non-Restricted
+
+** Add Students to Library Members
+AS student_name=Draco Malfoy,house=Slytherin
+AS student_name=Hermione Granger,house=Gryffindor
+AS student_name=Harry Potter,house=Gryffindor
+AS student_name=Luna Lovegood,house=Ravenclaw
+
+** Set Current Date
+SD 12/09/2020
+
+** Checkout Books
+CB  title=Fifteenth-Century Fiends,student_name=Harry Potter,number_of_days=2
+CB title=Winogrand's Wondrous Water Plants,student_name=Hermione Granger,number_of_days=4
+CB title=Ancient Runes Made Easy,student_name=Draco Malfoy
+CB title=Secrets of the Darkest Art,student_name=Hermione Granger,pass_code=Accio
+cb title=Magick Moste Evile,student_name=Draco Malfoy,pass_code=Protego,number_of_days=1
+
+PL ** Test Requesting a Book Hold
+RH title=Ancient Runes Made Easy,student_name=Luna Lovegood,number_of_days=1
+RH title=Ancient Runes Made Easy,student_name=Hermione Granger,number_of_days=1
+RH title=Winogrand's Wondrous Water Plants,student_name=Luna Lovegood,number_of_days=1
+RH title=Winogrand's Wondrous Water Plants,student_name=Draco Malfoy,number_of_days=1
+
+PL ** Test Requesting a Book Hold for a book that is available
+RH title=Hogwarts a History,student_name=Draco Malfoy
+
+PL ** Testing Book Hold Report
+HR
+PL
+
+PL ** Testing Return Book
+PL **** Test Returning a Book without a hold
+RB title=Fifteenth-Century Fiends
+PL **** Test Returning a Book with a hold creates new checkout 
+PL for first student with hold
+RB title=Ancient Runes Made Easy
+** Checkout Report
+CR
+** Hold Report
+HR
+PL
+
+PL ** Testing Delete Book
+PL **** Test Deleting a Book that is checked out & has holds
+DB title=Ancient Runes Made Easy
+** Checkout Report
+CR
+** Hold Report
+HR
+PL
+
+PL ** Test Overdue Report Before Any Books are Overdue
+OR
+PL
+
+PL ** Advancing Date to test Overdue Report
+AD 
+AD 
+AD 
+AD 
+PL
+
+PL ** Test Overdue Report Now that Books are Overdue
+OR
+PL
+
+PL Thank you for using the Hogwarts Library Management System!
+** That's the end of the sample data for Stage III.

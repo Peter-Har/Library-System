@@ -1,0 +1,11 @@
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+PL ** 5 books
+LI
+
+PL ** find all books
+FB

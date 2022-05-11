@@ -1,0 +1,70 @@
+***********************************************************
+Here is a list of available books (before adding any!)
+** List Inventory when there are no books
+*********************LIBRARY INVENTORY**********************
+Number of books available:  0
+------------------------------------
+
+** Now let's add a book:
+** List Inventory when there is 1 book
+*********************LIBRARY INVENTORY**********************
+Number of books available:  1
+------------------------------------
+Title: Curses and Counter-Curses
+Author: Vindictus Viridian
+Date: 1703
+Subject: Curses
+Section: Restricted
+------------------------------------
+
+Try adding a book that is already in inventory
+Winogrand's Wondrous Water Plants already present.
+
+** List Inventory when there are multiple books
+*********************LIBRARY INVENTORY**********************
+Number of books available:  3
+------------------------------------
+Title: Ancient Runes Made Easy
+Author: Laurenzoo
+Date: 1992
+Subject: Ancient Runes
+Section: Non-Restricted
+------------------------------------
+Title: Curses and Counter-Curses
+Author: Vindictus Viridian
+Date: 1703
+Subject: Curses
+Section: Restricted
+------------------------------------
+Title: Winogrand's Wondrous Water Plants
+Author: Selina Sapworthy
+Date: 1970
+Subject: Water plants
+Section: Non-Restricted
+------------------------------------
+
+** Test deleting a book from the book collection
+** Test Find Book with a single search parameter
+************************BOOK SEARCH*************************
+Number of books found:  1
+------------------------------------
+Title: Curses and Counter-Curses
+Author: Vindictus Viridian
+Date: 1703
+Subject: Curses
+Section: Restricted
+------------------------------------
+
+** List Current Library Members
+**********************LIBRARY MEMBERS***********************
+Gryffindor:
+                  Harry Potter
+              Hermione Granger
+Hufflepuff:
+         No Registered Members
+ Ravenclaw:
+                 Luna Lovegood
+ Slytherin:
+                  Draco Malfoy
+
+Thank you for using the Hogwarts Library Management System!

@@ -1,0 +1,17 @@
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+AS student_name=Z,house=Slytherin
+AS student_name=X,house=Gryffindor
+AS student_name=Y,house=Gryffindor
+AS student_name=U,house=Ravenclaw
+AS student_name=V,house=Hufflepuff
+AS student_name=V,house=Hufflepuff
+AS student_name=W,house=Hufflepuff
+
+LI
+LM

@@ -1,0 +1,16 @@
+  pl test lower case & spaced command line
+
+LI
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+LI
+LM
+
+DB title=A
+DB title=B
+DB title=E
+
+LI

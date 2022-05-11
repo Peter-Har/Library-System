@@ -1,0 +1,226 @@
+  pl test lower case & spaced command line
+
+LI
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+LI
+LM
+
+DB title=A
+DB title=B
+DB title=E
+
+LI
+
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+PL ** 5 books
+LI
+
+PL ** find all books
+FB
+
+PL ** Test Find Book with a single search parameter
+PL ** 4 books found: A, B, C, D
+FB section=Restricted
+PL 
+PL ** find 1 book: A
+FB title=A
+PL ** find 2 books: D, E
+FB author=F
+PL ** find 3 books: A, C, E
+FB year_published=2020
+
+PL ** find 2 books: A, C
+FB author=B,year_published=2020
+
+PL ** find 2 books: C, E
+FB subject=G,year_published=2020
+
+AS student_name=Z,house=Slytherin
+AS student_name=X,house=Gryffindor
+AS student_name=Y,house=Gryffindor
+AS student_name=U,house=Ravenclaw
+AS student_name=V,house=Hufflepuff
+AS student_name=V,house=Hufflepuff
+AS student_name=W,house=Hufflepuff
+
+LI
+LM
+
+SD 01/01/2021
+
+PL **** List books available to be Checked Out
+LA
+
+CB title=B,student_name=Z,number_of_days=3
+CB title=C,student_name=Z,number_of_days=2
+CB title=D,student_name=Z,number_of_days=1
+CB title=E,student_name=Z
+CR
+PL **** List books available to be Checked Out
+LA
+
+PL **missing pass code
+CB title=A,student_name=Z,number_of_days=4
+PL **invalid student
+CB title=A,student_name=L,pass_code=Accio,number_of_days=4
+PL **invalid title
+CB title=L,student_name=Z,pass_code=Accio,number_of_days=4
+CB title=A,student_name=Z,pass_code=Accio,number_of_days=4
+PL **already checked out
+CB title=A,student_name=Z,pass_code=Accio,number_of_days=4
+
+
+PL **** List books available to be Checked Out
+LA
+
+CR
+
+AD
+DT
+AD
+DT
+AD
+DT
+AD
+DT
+AD
+DT
+
+CR
+PL *** Deleting Book
+DB title=A
+CR
+PL 
+PL **** List books available to be Checked Out
+LA
+
+PL *** Deleting Book
+DB title=C
+CR
+PL **** List books available to be Checked Out
+LA
+
+PL *** Deleting Book
+DB title=B
+
+PL *** Deleting Book
+DB title=D
+CR
+PL **** List books available to be Checked Out
+LA
+
+PL *** Deleting Book
+DB title=E
+CR
+PL **** List books available to be Checked Out
+LA
+
+PL *** Make new books
+NB title=A,author=B,year_published=2020,subject=C,section=Restricted
+NB title=B,author=B,year_published=2019,subject=C,section=Restricted
+NB title=C,author=B,year_published=2020,subject=G,section=Restricted
+NB title=D,author=F,year_published=2019,subject=C,section=Restricted
+NB title=E,author=F,year_published=2020,subject=G,section=Non-Restricted
+
+PL *** Make new checkouts
+CB title=A,student_name=Z,pass_code=Accio,number_of_days=4
+CB title=B,student_name=Y,pass_code=Accio,number_of_days=3
+CB title=C,student_name=X,pass_code=Accio,number_of_days=2
+CB title=E,student_name=Z
+
+CR
+
+DT
+
+
+AD
+AD
+DT
+
+AD
+AD
+DT
+
+CR
+PL **** List books available to be Checked Out
+LA
+
+PL ** Return E
+RB title=E
+PL **** List books available to be Checked Out
+LA
+
+PL ** Return A
+RB title=A
+
+PL ** Return B
+RB title=B
+
+PL ** Return C
+RB title=C
+PL **** List books available to be Checked Out
+LA
+
+PL ** Hold Report before requests are made
+HR
+PL **Add new checkouts
+CB title=B,student_name=Z,pass_code=Accio,number_of_days=3
+CB title=C,student_name=Z,pass_code=Accio,number_of_days=2
+CB title=E,student_name=W
+
+PL **Add Hold Requests
+RH title=C,student_name=X,number_of_days=1
+RH title=C,student_name=Y,number_of_days=4
+RH title=C,student_name=U
+
+RH title=E,student_name=X
+RH title=E,student_name=Y,number_of_days=2
+RH title=E,student_name=U,number_of_days=1
+
+CR
+HR
+
+PL ** Return E & Checkout to Hold
+RB title=E
+
+PL ** Verify Checkout & Hold
+CR
+HR
+
+PL ** Delete Book E
+DB title=E
+
+PL ** Print Inventory, Checkout & Hold Reports to verify E is missing
+LI
+CR
+HR
+
+PL ## book not in book_collection
+RH title=Z,student_name=Z
+PL ## student not in library members
+RH title=A,student_name=L
+PL ## is available to be checked out. Use command to checkout book.
+RH title=D,student_name=Z
+
+PL ** Overdue report when no books are over due
+OR
+
+CR
+AD
+AD
+OR
+
+AD
+OR
+AD
+OR
+DT
